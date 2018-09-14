@@ -1,0 +1,3 @@
+rootProject.name = 'ece_scan'
+
+include ':app'
