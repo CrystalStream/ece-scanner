@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, StyleSheet } from 'react' 
 import { 
   Container,
   Content,
   Footer,
-  Button,
-  Card,
-  CardItem,
-  Body,
   Text,
   View,
   Form,
@@ -15,8 +11,9 @@ import {
 } from 'native-base';
 import { Image } from 'react-native';
 import Logo from '../../assets/udglogo.png';
+import BackgroundLogo from '../../assets/background.jpg'
 
-const styles = {
+const styles = StyleSheet.create({
   authLogoContainer: {
     justifyContent: 'center',
     marginHorizontal: 10,
@@ -39,7 +36,7 @@ const styles = {
   formItem: {
     marginVertical: 15,
   }
-}
+})
 
 export default class AuthContainer extends Component {
   
@@ -50,22 +47,24 @@ export default class AuthContainer extends Component {
   render() {
     return (
       <Container>
-      <Content>
-        <View style={styles.authLogoContainer}>
-          <Image source={Logo} style={styles.authLogo}/>
-        </View>
-        <View style={styles.authContainer}>
-          <Text style={styles.formHeader}>Iniciar Sesion</Text>
-          <Form>
-            <Item style={styles.formItem}>
-              <Input placeholder="Nombre de usario" />
-            </Item>
-            <Item style={styles.formItem}>
-              <Input placeholder="Contraseña" />
-            </Item>
-          </Form>
-        </View>
-      </Content>
+      <ImageBackground source={BackgroundLogo} style={{width: '100%', height: '100%'}}>
+        <Content>
+          <View style={styles.authLogoContainer}>
+            <Image source={Logo} style={styles.authLogo}/>
+          </View>
+          <View style={styles.authContainer}>
+            <Text style={styles.formHeader}>Iniciar Sesion</Text>
+            <Form>
+              <Item style={styles.formItem}>
+                <Input placeholder="Nombre de usario" />
+              </Item>
+              <Item style={styles.formItem}>
+                <Input placeholder="Contraseña" />
+              </Item>
+            </Form>
+          </View>
+        </Content>
+      </ImageBackground>
       <Footer>
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <Text>Universidad de Guadalajara &copy;</Text>
